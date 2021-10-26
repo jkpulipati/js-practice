@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-color {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Text</h1>
+
+    <div id="header">Heading using div <span style="display: none;">span inside div</span></div>
+</body>
+<script>
+
+console.dir(document);
+
+console.log(document.domain);
+console.log(document.URL);
+console.log(document.title);
+console.log(document.doctype);
+console.log(document.head);
+console.log(document.body);
+console.log(document.all);
+console.log(document.all[0]);
+
+document.all[2].textContent = 'hello';
+
+console.log(document.forms);
+console.log(document.links);
+console.log(document.images);
+
+// get element by id
+
+const header = document.getElementById('header');
+console.log(header);
+
+/***
+ * textContent will give all text including the nested elements irrespective of their visibility
+ * innerText will give the text which are visible on the dom
+ * innerHTML content inside an element including the html tags and it's styles
+**/
+console.log(header.textContent);
+console.log(header.innerText);
+console.log(header.innerHTML);
+
+header.innerHTML = '<p>Inner html content</p>'; // element is going to be added inside a header element
+
+// add styles to header
+header.style.borderBottom = 'solid 2px black';
+
+const text = document.querySelector('.title');
+text.addEventListener('click', function () {
+    text.classList.toggle('text-color');
+});
+
+
+</script>
+</html>

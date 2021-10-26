@@ -48,7 +48,7 @@ function testBrancketsOpenClose(str) {
         if (bracket === '(' || bracket === '[' || bracket === "{") {
           res.push(bracket);
         } else if (bracket === ')' || bracket === ']' || bracket === "}") {
-          const closeBracket = stack.pop();
+          const closeBracket = res.pop();
           if (obj[closeBracket] !== bracket) {
             return false;
           }
